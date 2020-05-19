@@ -27,7 +27,22 @@ class ViewController: UIViewController {
         //testFactoryMethod()
         
         // 추상 팩토리(Abstract Factory) 패턴
-        testAbstractFactory()
+        //testAbstractFactory()
+        
+        // 빌더(Builder) 패턴
+        //testBuilder()
+        
+        // 어댑터(Adapter) 패턴
+        //testAdapter()
+        
+        // 퍼사드(Facade) 패턴
+        //testFacade()
+        
+        // 데코레이터(Decorator) 패턴
+        //testDecorator()
+        
+        // 컴포지트(Composite) 패턴
+        testComposite()
     }
 
     func testSingleton()
@@ -113,4 +128,92 @@ class ViewController: UIViewController {
         productB1.useProduct() // ProductB1 useProduct
         productB2.useProduct() // ProductB2 useProduct
     }
+    
+    func testBuilder()
+    {
+        let product1 = Director(builder:ConCreateBuilderA()).build()
+        print("product1.value1 : \(product1.getProduct().value1)") // product1.value1 : 1
+        
+        let product2 = Director(builder:ConCreateBuilderB()).build()
+        print("product2.value1 : \(product2.getProduct().value1)") // product2.value1 : 10
+        
+        let product3 = Director(builder:ConCreateBuilderB()).build()
+        
+        // 체이닝 방식으로 각 속성 재설정 가능
+        product3.setValue1(value: 100).setValue2(value: 200).setValue3(value: 300)
+        print("product3.value1 : \(product3.getProduct().value1)") // product3.value1 : 100
+    }
+    
+    func testAdapter()
+    {
+        let adaptee = Adaptee()
+        print(adaptee.specificRequest()) // Adaptee's specificRequest.
+        
+        ClientAdapter.specificRequest(target: Adapter(adaptee)) // Call from adapter - Adaptee's specificRequest.
+    }
+    
+    func testFacade()
+    {
+        let facade = Facade(subsystem1: Subsystem1(), subsystem2: Subsystem2())
+        print(facade.operation())
+        
+        // Facade initializes subsystems:
+        // Sybsystem1: Ready!
+        // Sybsystem2: Get ready!
+
+        // Facade orders subsystems to perform the action:
+        // Sybsystem1: Go!
+        // Sybsystem2: Fire!
+    }
+    
+    func testDecorator()
+    {
+        let component = ConcreteComponent()
+        print("Result: " + component.operation()) // Result: ConcreteComponent operation
+        
+        let decorator1 = ConcreteDecoratorA(component)
+        print("Result: " + decorator1.operation()) // Result: ConcreteDecoratorA(ConcreteComponent operation)
+        
+        let decorator2 = ConcreteDecoratorB(decorator1)
+        print("Result: " + decorator2.operation()) // Result: ConcreteDecoratorB(ConcreteDecoratorA(ConcreteComponent operation))
+    }
+    
+    func testComposite()
+    {
+        let tree = Composite()
+        print("Tree : " + tree.operation())
+        // Tree : Branch()
+        
+        let branch1 = Composite()
+        branch1.add(component: Leaf())
+        branch1.add(component: Leaf())
+
+        let branch2 = Composite()
+        branch2.add(component: Leaf())
+
+        tree.add(component: branch1)
+        print("Tree : " + tree.operation())
+        // Tree : Branch(Branch(Leaf Leaf))
+        
+        tree.add(component: branch2)
+        print("Tree : " + tree.operation())
+        // Tree : Branch(Branch(Leaf Leaf) Branch(Leaf))
+        
+        tree.add(component: Leaf())
+        print("Tree : " + tree.operation())
+        // Tree : Branch(Branch(Leaf Leaf) Branch(Leaf) Leaf)
+        
+        tree.remove()
+        print("Tree(remove) : " + tree.operation())
+        // Tree(remove) : Branch(Branch(Leaf Leaf) Branch(Leaf))
+        
+        tree.remove()
+        print("Tree(remove) : " + tree.operation())
+        // Tree(remove) : Branch(Branch(Leaf Leaf))
+        
+        tree.remove()
+        print("Tree(remove) : " + tree.operation())
+        // Tree(remove) : Branch()
+    }
 }
+
