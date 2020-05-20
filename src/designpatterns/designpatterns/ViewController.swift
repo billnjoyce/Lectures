@@ -42,7 +42,25 @@ class ViewController: UIViewController {
         //testDecorator()
         
         // 컴포지트(Composite) 패턴
-        testComposite()
+        //testComposite()
+        
+        // 브릿지(Bridge) 패턴
+        //testBridge()
+        
+        // 플라이웨이트(Flyweight) 패턴
+        //testFlyweight()
+        
+        // 프록시(Proxy) 패턴
+        //testProxy()
+        
+        // 옵저버(Observer) 패턴
+        //testObserver()
+        
+        // 스트래티지(Strategy) 패턴
+        //testStrategy()
+        
+        // 커맨드(Command) 패턴
+        testCommand()
     }
 
     func testSingleton()
@@ -215,5 +233,136 @@ class ViewController: UIViewController {
         print("Tree(remove) : " + tree.operation())
         // Tree(remove) : Branch()
     }
-}
+    
+    func testBridge()
+    {
+        let sedan = Sedan()
+        let redSedan = RedCar(car: sedan)
+        
+        redSedan.drive()
+        
+        // It's a red color sedan.
+        // Drive a sedan
+    }
+    
+    func testFlyweight()
+    {
+        func addCarToPoliceDatabase(
+                _ factory: FlyweightFactory,
+                _ plates: String,
+                _ owner: String,
+                _ car: [String]) {
 
+            print("Client: Adding a car to database.\n")
+
+            let flyweight = factory.getFlyweight(for: car)
+
+            flyweight.operation(uniqueState: [plates, owner])
+        }
+        
+        let factory = FlyweightFactory(states:
+        [
+            ["Chevrolet", "Camaro2018", "pink"],
+            ["Mercedes Benz", "C300", "black"],
+            ["Mercedes Benz", "C500", "red"],
+            ["BMW", "M5", "red"],
+            ["BMW", "X6", "white"]
+        ])
+
+        factory.printFlyweights()
+        // FlyweightFactory: I have 5 flyweights:
+
+        // Mercedes Benz C300 black
+        // BMW M5 red
+        // BMW X6 white
+        // Chevrolet Camaro2018 pink
+        // Mercedes Benz C500 red
+        
+        addCarToPoliceDatabase(factory,
+                "CL234IR",
+                "James Doe",
+                ["BMW", "M5", "red"])
+
+        addCarToPoliceDatabase(factory,
+                "CL234IR",
+                "James Doe",
+                ["BMW", "X1", "red"])
+
+        factory.printFlyweights()
+        
+        // BMW X6 white
+        // BMW X1 red
+        // Mercedes Benz C300 black
+        // Mercedes Benz C500 red
+        // Chevrolet Camaro2018 pink
+        // BMW M5 red
+    }
+    
+    func testProxy()
+    {
+        func clientProxy(subject: Subject) {
+            subject.request()
+        }
+        
+        let realSubject = RealSubject()
+        clientProxy(subject: realSubject)
+        // RealSubject request.
+        
+        let proxy = Proxy(realSubject)
+        clientProxy(subject: proxy)
+        // Proxy request.
+        // RealSubject request.
+    }
+    
+    func testObserver()
+    {
+        let subject = ObserverSubject()
+
+        let observer1 = ConcreteObserverA()
+        let observer2 = ConcreteObserverB()
+
+        subject.attach(observer1) // Subject: Attached an observer.
+        subject.attach(observer2) // Subject: Attached an observer.
+
+        subject.updateState()
+        // ConcreteObserverA - updated a state : 6
+        // ConcreteObserverB - updated a state : 6
+        
+        subject.updateState()
+        // ConcreteObserverA - updated a state : 1
+        // ConcreteObserverB - updated a state : 1
+        
+        subject.detach(observer2) // Subject: Detached an observer.
+        
+        subject.updateState()
+        // ConcreteObserverA - updated a state : 9
+    }
+    
+    func testStrategy()
+    {
+        let context = Context(strategy: ConcreteStrategyA())
+        print("Client: Strategy is set to normal sorting.")
+        context.doSomeBusinessLogic() // a,b,c,d,e
+
+        print("\nClient: Strategy is set to reverse sorting.")
+        context.update(strategy: ConcreteStrategyB())
+        context.doSomeBusinessLogic() // e,d,c,b,a
+    }
+    
+    func testCommand()
+    {
+        let invoker = Invoker()
+        invoker.setOnStart(SimpleCommand("Say Hi!"))
+
+        let receiver = Receiver()
+        invoker.setOnFinish(ComplexCommand(receiver, "Send email", "Save report"))
+        
+        // 호출자의 실행 함수를 수정을 할 필요없이 ConcreteCommand 내의 receiver 객체를 통하여 다양한 행위를 할 수 있다.
+        invoker.doSomethingImportant()
+        
+        // SimpleCommand: See, I can do simple things like printing (Say Hi!)
+        // ComplexCommand: Complex stuff should be done by a receiver object.
+        // Receiver: Working on (Send email)
+        // Receiver: Also working on (Save report)
+    }
+}
