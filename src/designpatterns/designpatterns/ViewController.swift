@@ -60,7 +60,28 @@ class ViewController: UIViewController {
         //testStrategy()
         
         // 커맨드(Command) 패턴
-        testCommand()
+        //testCommand()
+        
+        // 반복자(Iterator) 패턴
+        //testIterator()
+        
+        // 중재자(Mediator) 패턴
+        //testMediator()
+        
+        // 상태(State) 패턴
+        //testState()
+        
+        // 템플릿 메소드(Template Method) 패턴
+        //testTemplateMethod()
+        
+        // 방문자(Visitor) 패턴
+        //testVisitor()
+        
+        // 책임 연쇄 패턴(Chain of Responsibility) 패턴
+        //testCoR()
+        
+        // 메멘토(Memento) 패턴
+        testMemento()
     }
 
     func testSingleton()
@@ -364,5 +385,211 @@ class ViewController: UIViewController {
         // ComplexCommand: Complex stuff should be done by a receiver object.
         // Receiver: Working on (Send email)
         // Receiver: Also working on (Save report)
+    }
+    
+    func testIterator()
+    {
+        let words = ConcreteCollectionA()
+        words.append("First")
+        words.append("Second")
+        words.append("Third")
+        
+        words.makeIterator()
+        
+        let numbers = ConcreteCollectionB()
+        numbers.append(1)
+        numbers.append(2)
+        numbers.append(3)
+
+        let iterator1 = words.makeIterator()
+        
+        while (iterator1.hasNext()) {
+            print(iterator1.next()!)
+            // First
+            // Second
+            // Third
+        }
+        
+        let iterator2 = numbers.makeIterator()
+        
+        while (iterator2.hasNext()) {
+            print(iterator2.next()!)
+            // 1
+            // 2
+            // 3
+        }
+        
+        let iterator3 = ConcreteIterator(words)
+        
+        while (true) {
+            guard let collection = iterator3.next() else { break }
+            print(collection)
+            // First
+            // Second
+            // Third
+        }
+        
+        let iterator4 = ConcreteIterator(numbers)
+        
+        while (true) {
+            guard let collection = iterator4.next() else { break }
+            print(collection)
+            // 1
+            // 2
+            // 3
+        }
+    }
+    
+    func testMediator()
+    {
+        let component1 = Component1()
+        let component2 = Component2()
+
+        let mediator = ConcreteMediator(component1, component2)
+        
+        component1.operationA()
+        // operationA
+        // operationC
+
+        component2.operationD()
+        // operationD
+        // operationB
+        // operationC
+    }
+    
+    func testState()
+    {
+        let context = ContextState(ConcreteStateA())
+        
+        context.request1() // ConcreteStateA handles request1.
+        context.request1() // ConcreteStateB handles request1.
+        
+        context.request2() // ConcreteStateB handles request2.
+        context.request2() // ConcreteStateA handles request2.
+    }
+    
+    func testTemplateMethod()
+    {
+        let template1 = ConcreteClass1()
+        template1.templateMethod()
+        
+        // baseOperation1
+        // ConcreteClass1 requiredOperations1
+        // baseOperation2
+        // ConcreteClass1 requiredOperation2
+        // baseOperation3
+        // ConcreteClass1 hook2
+        
+        let template2 = ConcreteClass2()
+        template2.templateMethod()
+        
+        // baseOperation1
+        // ConcreteClass2 requiredOperations1
+        // baseOperation2
+        // ConcreteClass2 hook1
+        // ConcreteClass2 requiredOperation2
+        // baseOperation3
+    }
+    
+    func testVisitor()
+    {
+        func visit(elements: [Element], visitor: Visitor) {
+            /* for element in elements
+            {
+                element.accept(visitor)
+            }*/
+    
+            elements.forEach({ $0.accept(visitor) })
+        }
+        
+        let elements: [Element] = [ConcreteElementA(), ConcreteElementB()]
+        
+        let visitor1 = ConcreteVisitor1()
+        visit(elements: elements, visitor: visitor1)
+        // A + ConcreteVisitor1
+        // B + ConcreteVisitor1
+        
+        let visitor2 = ConcreteVisitor2()
+        visit(elements: elements, visitor: visitor2)
+        // A + ConcreteVisitor2
+        // B + ConcreteVisitor2
+    }
+    
+    func testCoR()
+    {
+        func handler(handler: Handler) {
+
+            let food = ["Nut", "Banana", "Fish"]
+
+            food.forEach({ let result = handler.handle(request: $0)
+                if(result == nil) {
+                    print($0 + " was left untouched.")
+                }
+                else {
+                    print(result!)
+                }})
+        }
+        
+        let monkey = MonkeyHandler()
+        let dog = DogHandler()
+        let cat = CatHandler()
+        
+        monkey.setNext(handler: dog).setNext(handler: cat)
+
+        // Chain: Monkey > Dog > Cat
+        handler(handler: monkey)
+        
+        // Nut was left untouched.
+        // Monkey : I'll eat the Banana
+        // Cat : I'll eat the Fish
+        
+        // Subchain: Dog > Cat
+        handler(handler: dog)
+        
+        // Nut was left untouched.
+        // Banana was left untouched.
+        // Cat : I'll eat the Fish
+    }
+    
+    func testMemento()
+    {
+        let originator = Originator(state: "Super-duper-super-puper-super.")
+        // Originator: My initial state is: Super-duper-super-puper-super.
+        
+        let caretaker = Caretaker(originator: originator)
+        
+        caretaker.backup()
+        // Saving Originator's state...
+        
+        originator.doSomething()
+        // Originator: I'm doing something important.
+        // Originator: and my state has changed to: B147
+        
+        caretaker.backup()
+        // Saving Originator's state...
+        
+        originator.doSomething()
+        // Originator: I'm doing something important.
+        // Originator: and my state has changed to: 20B2
+        
+        caretaker.backup()
+        // Saving Originator's state...
+        
+        caretaker.showHistory()
+        // Super-duper-super-puper-super. 08:22:02
+        // B147 08:22:02
+        // 20B2 08:22:02
+        
+        caretaker.undo()
+        // Restoring state to: 20B2 08:22:31
+        // Originator: My state has changed to: 20B2
+        
+        caretaker.undo()
+        // Restoring state to: B147 08:22:31
+        // Originator: My state has changed to: B147
+        
+        caretaker.undo()
+        // Caretaker: Restoring state to: Super-duper-super-puper-super. 08:22:31
+        // Originator: My state has changed to: Super-duper-super-puper-super.
     }
 }

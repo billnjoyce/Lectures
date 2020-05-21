@@ -28,6 +28,13 @@
 		1A0ED358247504F800F3F51C /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0ED357247504F800F3F51C /* Observer.swift */; };
 		1A0ED35A24750E9F00F3F51C /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0ED35924750E9F00F3F51C /* Strategy.swift */; };
 		1A0ED35C2475154600F3F51C /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0ED35B2475154600F3F51C /* Command.swift */; };
+		1A0ED35E24760EBC00F3F51C /* Iterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0ED35D24760EBC00F3F51C /* Iterator.swift */; };
+		1A0ED3602476241B00F3F51C /* Mediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0ED35F2476241B00F3F51C /* Mediator.swift */; };
+		1A0ED362247629F100F3F51C /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0ED361247629F100F3F51C /* State.swift */; };
+		1A0ED364247646DC00F3F51C /* TemplateMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0ED363247646DC00F3F51C /* TemplateMethod.swift */; };
+		1A0ED36624765D0E00F3F51C /* Visitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0ED36524765D0E00F3F51C /* Visitor.swift */; };
+		1A0ED3682476675600F3F51C /* ChainofResponsibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0ED3672476675600F3F51C /* ChainofResponsibility.swift */; };
+		1A0ED36A2476704200F3F51C /* Memento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0ED3692476704200F3F51C /* Memento.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +61,13 @@
 		1A0ED357247504F800F3F51C /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		1A0ED35924750E9F00F3F51C /* Strategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strategy.swift; sourceTree = "<group>"; };
 		1A0ED35B2475154600F3F51C /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		1A0ED35D24760EBC00F3F51C /* Iterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iterator.swift; sourceTree = "<group>"; };
+		1A0ED35F2476241B00F3F51C /* Mediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mediator.swift; sourceTree = "<group>"; };
+		1A0ED361247629F100F3F51C /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		1A0ED363247646DC00F3F51C /* TemplateMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateMethod.swift; sourceTree = "<group>"; };
+		1A0ED36524765D0E00F3F51C /* Visitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visitor.swift; sourceTree = "<group>"; };
+		1A0ED3672476675600F3F51C /* ChainofResponsibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainofResponsibility.swift; sourceTree = "<group>"; };
+		1A0ED3692476704200F3F51C /* Memento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +130,13 @@
 				1A0ED357247504F800F3F51C /* Observer.swift */,
 				1A0ED35924750E9F00F3F51C /* Strategy.swift */,
 				1A0ED35B2475154600F3F51C /* Command.swift */,
+				1A0ED35D24760EBC00F3F51C /* Iterator.swift */,
+				1A0ED35F2476241B00F3F51C /* Mediator.swift */,
+				1A0ED361247629F100F3F51C /* State.swift */,
+				1A0ED363247646DC00F3F51C /* TemplateMethod.swift */,
+				1A0ED36524765D0E00F3F51C /* Visitor.swift */,
+				1A0ED3672476675600F3F51C /* ChainofResponsibility.swift */,
+				1A0ED3692476704200F3F51C /* Memento.swift */,
 			);
 			path = patterns;
 			sourceTree = "<group>";
@@ -196,14 +217,21 @@
 				1A0ED3502473C5FD00F3F51C /* Composite.swift in Sources */,
 				1A0ED34C2473B7D500F3F51C /* Facade.swift in Sources */,
 				1A0ED3542474CC5000F3F51C /* Flyweight.swift in Sources */,
+				1A0ED362247629F100F3F51C /* State.swift in Sources */,
+				1A0ED36624765D0E00F3F51C /* Visitor.swift in Sources */,
 				1A0ED35C2475154600F3F51C /* Command.swift in Sources */,
 				1A0ED3562474F89100F3F51C /* Proxy.swift in Sources */,
 				1A0ED34A2473A9CC00F3F51C /* Adapter.swift in Sources */,
 				1A0ED34E2473BE2000F3F51C /* Decorator.swift in Sources */,
+				1A0ED364247646DC00F3F51C /* TemplateMethod.swift in Sources */,
+				1A0ED36A2476704200F3F51C /* Memento.swift in Sources */,
 				1A0ED3422472556200F3F51C /* FactoryMehtod.swift in Sources */,
 				1A0ED3442472653200F3F51C /* Factory.swift in Sources */,
+				1A0ED3682476675600F3F51C /* ChainofResponsibility.swift in Sources */,
+				1A0ED35E24760EBC00F3F51C /* Iterator.swift in Sources */,
 				1A0ED32D24721C4500F3F51C /* ViewController.swift in Sources */,
 				1A0ED3522474BE1900F3F51C /* Bridge.swift in Sources */,
+				1A0ED3602476241B00F3F51C /* Mediator.swift in Sources */,
 				1A0ED33E247223D700F3F51C /* Singleton.swift in Sources */,
 				1A0ED32924721C4500F3F51C /* AppDelegate.swift in Sources */,
 				1A0ED34624726D0500F3F51C /* AbstractFactory.swift in Sources */,
