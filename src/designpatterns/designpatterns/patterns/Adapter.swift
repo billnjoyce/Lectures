@@ -32,8 +32,22 @@ class Adapter: Target {
     }
 }
 
-class ClientAdapter {
-    static func specificRequest(target: Target) {
-        print("Call from adapter - \(target.request())")
+class ClientAdapter : Client {
+    func makePattern() -> Pattern {
+        return PatternAdapter()
+    }
+}
+
+class PatternAdapter : Pattern {
+    func run() -> String {
+        var result = ""
+        
+        let adaptee = Adaptee()
+        print(adaptee.specificRequest()) // Adaptee's specificRequest.
+        result += "\(adaptee.specificRequest())\n"
+        
+        result += "Call from adapter - \(Adapter(adaptee).request())\n"
+        
+        return result
     }
 }

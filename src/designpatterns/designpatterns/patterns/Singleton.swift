@@ -15,8 +15,9 @@ class SingletonA {
         print("SingletonA init")
     }
     
-    func test() {
+    func test() -> String {
         print("SingletonA test")
+        return "SingletonA test\n"
     }
     
     public var a:Int = 0
@@ -35,7 +36,34 @@ class SingletonB {
         print("SingletonB init")
     }
     
-    func test() {
+    func test() -> String {
         print("SingletonB test")
+        return "SingletonB test\n"
+    }
+}
+
+class ClientSingleton : Client {
+    func makePattern() -> Pattern {
+        return PatternSingleton()
+    }
+}
+
+class PatternSingleton : Pattern {
+    func run() -> String {
+        var result = ""
+        
+        result += SingletonA.sharedInstance.test()
+        result += SingletonA.sharedInstance.test()
+        
+        // Print SingletonA init
+        // Print SingletonA test
+        // Print SingletonA test
+        
+        // var a:SingletonA = SingletonA() // 컴파일 에러, 외부에서 생성 및 초기화 불가
+        
+        result += SingletonB.sharedInstance.test()
+        result += SingletonB.sharedInstance.test()
+        
+        return result
     }
 }

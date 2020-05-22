@@ -1,0 +1,6 @@
+framework module Pods_designpatterns {
+  umbrella header "Pods-designpatterns-umbrella.h"
+
+  export *
+  module * { export * }
+}

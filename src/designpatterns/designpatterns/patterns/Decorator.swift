@@ -41,3 +41,29 @@ class ConcreteDecoratorB : Decorator {
         return "ConcreteDecoratorB(" + super.operation() + ")"
     }
 }
+
+class ClientDecorator : Client {
+    func makePattern() -> Pattern {
+        return PatternDecorator()
+    }
+}
+
+class PatternDecorator : Pattern {
+    func run() -> String {
+        var result = ""
+        
+        let component = ConcreteComponent()
+        print("Result: " + component.operation()) // Result: ConcreteComponent operation
+        result += "Result: " + component.operation() + "\n"
+        
+        let decorator1 = ConcreteDecoratorA(component)
+        print("Result: " + decorator1.operation()) // Result: ConcreteDecoratorA(ConcreteComponent operation)
+        result += "Result: " + decorator1.operation() + "\n"
+        
+        let decorator2 = ConcreteDecoratorB(decorator1)
+        print("Result: " + decorator2.operation()) // Result: ConcreteDecoratorB(ConcreteDecoratorA(ConcreteComponent operation))
+        result += "Result: " + decorator2.operation() + "\n"
+        
+        return result
+    }
+}

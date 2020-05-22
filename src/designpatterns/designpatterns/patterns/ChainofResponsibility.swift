@@ -56,3 +56,52 @@ class CatHandler: BaseHandler {
         }
     }
 }
+
+class ClientCoR : Client {
+    func makePattern() -> Pattern {
+        return PatternCoR()
+    }
+}
+
+class PatternCoR : Pattern {
+    func run() -> String {
+        var result = ""
+        
+        func handler(handler: Handler) {
+
+            let food = ["Nut", "Banana", "Fish"]
+
+            food.forEach({ let r = handler.handle(request: $0)
+                if(r == nil) {
+                    print($0 + " was left untouched.")
+                    result += $0 + " was left untouched.\n"
+                }
+                else {
+                    print(r!)
+                    result += r! + "\n"
+                }})
+        }
+        
+        let monkey = MonkeyHandler()
+        let dog = DogHandler()
+        let cat = CatHandler()
+        
+        monkey.setNext(handler: dog).setNext(handler: cat)
+
+        // Chain: Monkey > Dog > Cat
+        handler(handler: monkey)
+        
+        // Nut was left untouched.
+        // Monkey : I'll eat the Banana
+        // Cat : I'll eat the Fish
+        
+        // Subchain: Dog > Cat
+        handler(handler: dog)
+        
+        // Nut was left untouched.
+        // Banana was left untouched.
+        // Cat : I'll eat the Fish
+        
+        return result
+    }
+}

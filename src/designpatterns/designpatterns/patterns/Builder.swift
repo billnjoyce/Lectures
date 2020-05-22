@@ -107,3 +107,32 @@ class Director {
         return builder.build()
     }
 }
+
+class ClientBuilder : Client {
+    func makePattern() -> Pattern {
+        return PatternBuilder()
+    }
+}
+
+class PatternBuilder : Pattern {
+    func run() -> String {
+        var result = ""
+        
+        let product1 = Director(builder:ConCreateBuilderA()).build()
+        print("product1.value1 : \(product1.getProduct().value1)") // product1.value1 : 1
+        result += "product1.value1 : \(product1.getProduct().value1)\n"
+        
+        let product2 = Director(builder:ConCreateBuilderB()).build()
+        print("product2.value1 : \(product2.getProduct().value1)") // product2.value1 : 10
+        result += "product2.value1 : \(product2.getProduct().value1)\n"
+        
+        let product3 = Director(builder:ConCreateBuilderB()).build()
+        
+        // 체이닝 방식으로 각 속성 재설정 가능
+        product3.setValue1(value: 100).setValue2(value: 200).setValue3(value: 300)
+        print("product3.value1 : \(product3.getProduct().value1)") // product3.value1 : 100
+        result += "product3.value1 : \(product3.getProduct().value1)\n"
+        
+        return result
+    }
+}

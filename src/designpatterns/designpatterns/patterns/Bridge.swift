@@ -11,21 +11,23 @@ import Foundation
 // Implementor
 protocol Car {
     // implementation()
-    func drive()
+    func drive() -> String
 }
 
 // ConcreteImplementor
 class Sedan : Car {
     // implementation()
-    func drive() {
+    func drive() -> String {
         print("Drive a sedan")
+        return "Drive a sedan\n"
     }
 }
 
 // ConcreteImplementor
 class SUV : Car {
-    func drive() {
+    func drive() -> String {
         print("Drive a SUV")
+        return "Drive a SUV\n"
     }
 }
 
@@ -35,7 +37,7 @@ protocol ColoredCar {
     var car: Car { get set }
     
     // implementation()
-    func drive()
+    func drive() -> String
 }
 
 // RefinedAbstraction
@@ -48,11 +50,36 @@ class RedCar: ColoredCar {
     }
     
     // refinedFunction()
-    func drive() {
+    func drive() -> String {
+        var result = ""
         print("It's a red color sedan.")
+        result += "It's a red color sedan.\n"
         
         // self.impl.implementation()
-        car.drive()
+        result += car.drive()
+        
+        return result
     }
 }
 
+class ClientBridge : Client {
+    func makePattern() -> Pattern {
+        return PatternBridge()
+    }
+}
+
+class PatternBridge : Pattern {
+    func run() -> String {
+        var result = ""
+        
+        let sedan = Sedan()
+        let redSedan = RedCar(car: sedan)
+        
+        result += redSedan.drive()
+        
+        // It's a red color sedan.
+        // Drive a sedan
+        
+        return result
+    }
+}

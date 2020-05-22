@@ -9,12 +9,13 @@
 import Foundation
 
 protocol Subject {
-    func request()
+    func request() -> String
 }
 
 class RealSubject : Subject {
-    func request() {
+    func request() -> String {
         print("RealSubject request.")
+        return "RealSubject request."
     }
 }
 
@@ -25,11 +26,40 @@ class Proxy : Subject {
         self.realSubject = realSubject
     }
 
-    func request() {
+    func request() -> String {
         print("Proxy request.")
         
         otherFunction()
+        
+        return "Proxy request."
     }
 
     private func otherFunction() { }
+}
+
+class ClientProxy : Client {
+    func makePattern() -> Pattern {
+        return PatternProxy()
+    }
+}
+
+class PatternProxy : Pattern {
+    func run() -> String {
+        var result = ""
+        
+        func clientProxy(subject: Subject) {
+            result += subject.request() + "\n"
+        }
+        
+        let realSubject = RealSubject()
+        clientProxy(subject: realSubject)
+        // RealSubject request.
+        
+        let proxy = Proxy(realSubject)
+        clientProxy(subject: proxy)
+        // Proxy request.
+        // RealSubject request.
+        
+        return result
+    }
 }

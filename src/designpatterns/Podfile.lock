@@ -1,0 +1,16 @@
+PODS:
+  - SwiftComboBox (0.1.5)
+
+DEPENDENCIES:
+  - SwiftComboBox
+
+SPEC REPOS:
+  trunk:
+    - SwiftComboBox
+
+SPEC CHECKSUMS:
+  SwiftComboBox: 2b40c86e7c7b8a89968efbe23f4860d463890f8a
+
+PODFILE CHECKSUM: 71d92b91f0924c204199828a115f161e21e2bed2
+
+COCOAPODS: 1.9.1

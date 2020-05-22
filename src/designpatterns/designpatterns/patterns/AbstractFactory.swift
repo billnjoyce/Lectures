@@ -34,15 +34,15 @@ class ConcreteFactory2 : AbstractFactory{
 }
 
 protocol AbstractProduct {
-    func useProduct()
+    func useProduct() -> String
 }
 
 class AbstractProductA : AbstractProduct {
-    func useProduct() { }
+    func useProduct() -> String { return "" }
 }
 
 class AbstractProductB : AbstractProduct {
-    func useProduct() { }
+    func useProduct() -> String { return "" }
 }
 
 class ProductA1 : AbstractProductA {
@@ -50,8 +50,9 @@ class ProductA1 : AbstractProductA {
         print("ProductA1 init")
     }
     
-    override func useProduct() {
+    override func useProduct() -> String {
         print("ProductA1 useProduct")
+        return "ProductA1 useProduct\n"
     }
 }
 
@@ -60,8 +61,9 @@ class ProductA2 : AbstractProductA {
         print("ProductA2 init")
     }
     
-    override func useProduct() {
+    override func useProduct() -> String {
         print("ProductA2 useProduct")
+        return "ProductA2 useProduct\n"
     }
 }
 
@@ -70,8 +72,9 @@ class ProductB1 : AbstractProductB {
         print("ProductB1 init")
     }
     
-    override func useProduct() {
+    override func useProduct() -> String {
         print("ProductB1 useProduct")
+        return "ProductB1 useProduct\n"
     }
 }
 
@@ -80,7 +83,39 @@ class ProductB2 : AbstractProductB {
         print("ProductB2 init")
     }
     
-    override func useProduct() {
+    override func useProduct() -> String {
         print("ProductB2 useProduct")
+        return "ProductB2 useProduct\n"
+    }
+}
+
+class ClientAbstractFactory : Client {
+    func makePattern() -> Pattern {
+        return PatternAbstractFactory()
+    }
+}
+
+class PatternAbstractFactory : Pattern {
+    func run() -> String {
+        var result = ""
+        
+        let factory1 = ConcreteFactory1()
+        let productA1 = factory1.createProduct1() // ProductA1 init
+        result += "ProductA1 init\n"
+        let productA2 = factory1.createProduct2() // ProductA2 init
+        result += "ProductA2 init\n"
+        
+        let factory2 = ConcreteFactory2()
+        let productB1 = factory2.createProduct1() // ProductB1 init
+        result += "ProductB1 init\n"
+        let productB2 = factory2.createProduct2() // ProductB2 init
+        result += "ProductBa init\n"
+        
+        result += productA1.useProduct() // ProductA1 useProduct
+        result += productA2.useProduct() // ProductA1 useProduct
+        result += productB1.useProduct() // ProductB1 useProduct
+        result += productB2.useProduct() // ProductB2 useProduct
+        
+        return result
     }
 }

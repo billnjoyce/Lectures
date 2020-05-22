@@ -53,3 +53,27 @@ class ConcreteProduct2: Product {
         return "ConcreteProduct2 operation"
     }
 }
+
+class ClientFactoryMethod : Client {
+    func makePattern() -> Pattern {
+        return PatternFactoryMethod()
+    }
+}
+
+class PatternFactoryMethod : Pattern {
+    func run() -> String {
+        var result = ""
+        
+        func concreteClient(creator: Creator) -> String {
+            return creator.someOperation() + "\n"
+        }
+        
+        result += concreteClient(creator: ConcreteCreator1())
+        // ConcreteProduct1 operation
+        
+        result += concreteClient(creator: ConcreteCreator2())
+        // ConcreteProduct2 operation
+        
+        return result
+    }
+}

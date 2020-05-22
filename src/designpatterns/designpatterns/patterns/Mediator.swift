@@ -70,3 +70,27 @@ class Component2 : BaseComponent {
         mediator?.notify(sender: self, event: "D")
     }
 }
+
+class ClientMediator : Client {
+    func makePattern() -> Pattern {
+        return PatternMediator()
+    }
+}
+
+class PatternMediator : Pattern {
+    func run() -> String {
+        var result = ""
+        
+        let context = Context(strategy: ConcreteStrategyA())
+        print("Client: Strategy is set to normal sorting.")
+        result += "Client: Strategy is set to normal sorting.\n"
+        result += context.doSomeBusinessLogic() // a,b,c,d,e
+
+        print("\nClient: Strategy is set to reverse sorting.")
+        result += "\nClient: Strategy is set to reverse sorting.\n"
+        context.update(strategy: ConcreteStrategyB())
+        result += context.doSomeBusinessLogic() // e,d,c,b,a
+        
+        return result
+    }
+}

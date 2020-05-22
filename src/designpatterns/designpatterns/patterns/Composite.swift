@@ -66,3 +66,59 @@ class Composite : ComponentA {
         return "Branch(" + result.joined(separator: " ") + ")"
     }
 }
+
+class ClientComposite : Client {
+    func makePattern() -> Pattern {
+        return PatternComposite()
+    }
+}
+
+class PatternComposite : Pattern {
+    func run() -> String {
+        var result = ""
+        
+        let tree = Composite()
+        print("Tree : " + tree.operation())
+        result += "Tree : " + tree.operation() + "\n"
+        // Tree : Branch()
+        
+        let branch1 = Composite()
+        branch1.add(component: Leaf())
+        branch1.add(component: Leaf())
+
+        let branch2 = Composite()
+        branch2.add(component: Leaf())
+
+        tree.add(component: branch1)
+        print("Tree : " + tree.operation())
+        result += "Tree : " + tree.operation() + "\n"
+        // Tree : Branch(Branch(Leaf Leaf))
+        
+        tree.add(component: branch2)
+        print("Tree : " + tree.operation())
+        result += "Tree : " + tree.operation() + "\n"
+        // Tree : Branch(Branch(Leaf Leaf) Branch(Leaf))
+        
+        tree.add(component: Leaf())
+        print("Tree : " + tree.operation())
+        result += "Tree : " + tree.operation() + "\n"
+        // Tree : Branch(Branch(Leaf Leaf) Branch(Leaf) Leaf)
+        
+        tree.remove()
+        print("Tree(remove) : " + tree.operation())
+        result += "Tree(remove) : " + tree.operation() + "\n"
+        // Tree(remove) : Branch(Branch(Leaf Leaf) Branch(Leaf))
+        
+        tree.remove()
+        print("Tree(remove) : " + tree.operation())
+        result += "Tree(remove) : " + tree.operation() + "\n"
+        // Tree(remove) : Branch(Branch(Leaf Leaf))
+        
+        tree.remove()
+        print("Tree(remove) : " + tree.operation())
+        result += "Tree(remove) : " + tree.operation() + "\n"
+        // Tree(remove) : Branch()
+        
+        return result
+    }
+}

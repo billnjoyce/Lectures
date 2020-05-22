@@ -51,3 +51,28 @@ class Subsystem2 {
     }
 }
 
+class ClientFacade : Client {
+    func makePattern() -> Pattern {
+        return PatternFacade()
+    }
+}
+
+class PatternFacade : Pattern {
+    func run() -> String {
+        var result = ""
+        
+        let facade = Facade(subsystem1: Subsystem1(), subsystem2: Subsystem2())
+        print(facade.operation())
+        result += facade.operation() + "\n"
+        
+        // Facade initializes subsystems:
+        // Sybsystem1: Ready!
+        // Sybsystem2: Get ready!
+
+        // Facade orders subsystems to perform the action:
+        // Sybsystem1: Go!
+        // Sybsystem2: Fire!
+        
+        return result
+    }
+}
