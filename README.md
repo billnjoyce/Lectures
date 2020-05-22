@@ -9,7 +9,7 @@
 디자인 패턴
 -----------------------  
 
-* Singleton
+* [Singleton](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Singleton.pdf).
 * Prototype
 * Factory
 * Factory Method
