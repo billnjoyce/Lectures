@@ -40,7 +40,7 @@ For development, the following minimum development requirements must be observed
 
 
 ## Sample app screen
-![](../res/design-pattern.gif "")
+![](https://github.com/billnjoyce/Lectures/blob/master/res/design-pattern.gif "")
 
 
 
