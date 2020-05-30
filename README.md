@@ -6,7 +6,7 @@
 # 강좌 리스트
 -----------------------  
 
-[자료구조](https://github.com/billnjoyce/Lectures/tree/master/docs/design%20patterns)
+[자료구조](https://github.com/billnjoyce/Lectures/tree/master/docs/data%20structure)
 -----------------------  
 
 * [[Swift] Data Structure Introduction](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20Introduction.pdf)
