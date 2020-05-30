@@ -6,7 +6,7 @@
 # 강좌 리스트
 -----------------------  
 
-디자인 패턴
+[디자인 패턴](https://github.com/billnjoyce/Lectures/tree/master/docs/design%20patterns)
 -----------------------  
 
 * [Singleton](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Singleton.pdf)
@@ -32,6 +32,8 @@
 * Visitor
 * Chain of Responsibility
 * Mememto
+* [iOS] MVC, MVP, MVVM
+* [iOS] VIPER
 
 Swift
 -----------------------  
