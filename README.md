@@ -6,63 +6,78 @@
 # 강좌 리스트
 -----------------------  
 
+[자료구조](https://github.com/billnjoyce/Lectures/tree/master/docs/design%20patterns)
+-----------------------  
+
+* [[Swift] Data Structure Introduction](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20Introduction.pdf)
+* [[Swift] Data Structure - Array](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Array.pdf)
+* [[Swift] Data Structure - Linked List](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Linked%20List.pdf)
+* [[Swift] Data Structure - Stack](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Stack.pdf)
+* [[Swift] Data Structure - Queue](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Queue.pdf)
+* [[Swift] Data Structure - Dequeue](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Dequeue.pdf)
+* [[Swift] Data Structure - Heap](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Heap.pdf)
+* [[Swift] Data Structure - Tree](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Tree.pdf)
+* [[Swift] Data Structure - Graph](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Graph.pdf)
+
 [디자인 패턴](https://github.com/billnjoyce/Lectures/tree/master/docs/design%20patterns)
 -----------------------  
 
 * [Singleton](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Singleton.pdf)
-* Prototype
-* Factory
-* Factory Method
-* Abstract Factory
-* Builder
-* Adapter
-* Facade
-* Decorator
-* Composite
-* Bridge
-* Flyweight
-* Proxy
-* Observer
-* Strategy
-* Command
-* Iterator
-* Mediator
-* State
-* Template Method
-* Visitor
-* Chain of Responsibility
-* Mememto
-* [iOS] MVC, MVP, MVVM
-* [iOS] VIPER
+* [Prototype](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Prototype.pdf)
+* [Factory](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Factory.pdf)
+* [Factory Method](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Factory%20Method.pdf)
+* [Abstract Factory](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Abstract%20Factory.pdf)
+* [Builder](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Builder.pdf)
+* [Adapter](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Adapter.pdf)
+* [Facade](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Facade.pdf)
+* [Decorator](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Decorator.pdf)
+* [Composite](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Composite.pdf)
+* [Bridge](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Bridge.pdf)
+* [Flyweight](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Flyweight.pdf)
+* [Proxy](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Proxy.pdf)
+* [Observer](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Observer.pdf)
+* [Strategy](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Strategy.pdf)
+* [Command](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Command.pdf)
+* [Iterator](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20iterator.pdf)
+* [Mediator](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Mediator.pdf)
+* [State](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20State.pdf)
+* [Template Method](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Template%20Method.pdf)
+* [Visitor](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Visitor.pdf)
+* [Chain of Responsibility](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Chain%20of%20Responsibility.pdf)
+* [Mememto](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BSwift%5D%20Memento.pdf)
+* [(iOS) MVC, MVP, MVVM](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BiOS%5D%20MVC%2C%20MVP%2C%20MVVM.pdf)
+* [(iOS) VIPER](https://github.com/billnjoyce/Lectures/blob/master/docs/design%20patterns/%5BiOS%5D%20VIPER.pdf)
 
-Swift
+[Swift](https://github.com/billnjoyce/Lectures/tree/master/docs/swift)
 -----------------------  
 
-* ARC
-* Access Control
-* Class & Structure
-* Closure
-* Collection Types
-* Extensions
-* Functions
-* Generics
-* Higher-order function
-* Method
-* Operator
-* Optional
-* Properties
-* Protocol
-* Subscripts
-* Tuple
-* Type Castring
-* Type Inference
-* Swift5 vs Objective C
+* [ARC](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/ARC.pdf)
+* [Access Control](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Access%20Control.pdf)
+* [Class & Structure](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Class%20%26%20Structure.pdf)
+* [Closure](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Closure.pdf)
+* [Collection Types](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Collection%20Types.pdf)
+* [Extensions](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Extensions.pdf)
+* [Functions](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Functions.pdf)
+* [Generics](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Generics.pdf)
+* [Higher-order function](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Higher-order%20function.pdf)
+* [Method](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Methods.pdf)
+* [Operator](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Operator.pdf)
+* [Optional](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Optional.pdf)
+* [Properties](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Properties.pdf)
+* [Protocol(1/2)](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Protocol%20(1:2).pdf)
+* [Protocol(2/2)](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Protocol%20(2:2).pdf)
+* [Subscripts](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Subscripts.pdf)
+* [Tuple](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Tuple.pdf)
+* [Type Castring](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Type%20Casting.pdf)
+* [Type Inference](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Type%20Inference.pdf)
+* [Types](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Types.pdf)
+* [Swift5 vs Objective C](https://github.com/billnjoyce/Lectures/blob/master/docs/swift/Swift5%20vs%20Objective%20C.pdf)
 
-Security(보안)
+[Security(보안)](https://github.com/billnjoyce/Lectures/tree/master/docs/security)
 -----------------------  
 
-* Encryption
-* Hash Algorithm
+* [Encryption](https://github.com/billnjoyce/Lectures/blob/master/docs/security/Encryption.pdf)
+* [Hash Algorithm](https://github.com/billnjoyce/Lectures/blob/master/docs/security/Hash%20Algorithm.pdf)
 
 # 저자 정보
 -----------------------  
