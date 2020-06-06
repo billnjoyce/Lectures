@@ -11,7 +11,7 @@ Swift와 함께 디자인 패턴에 대한 개념 및 종류에 대해서 살펴
 
 > Singleton(싱글톤) 패턴은 객체 생성과 관련한 디자인 패턴으로서 객체 생성을 단한번만 생성하여 어디서든 참조하여 사용할 수 있도록 도와주는 디자인 패턴입니다.
 
-```javascript
+```swift
 class SingletonA {
     static let sharedInstance = SingletonA()
 
