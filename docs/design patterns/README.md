@@ -40,10 +40,10 @@ var a:SingletonA = SingletonA() // 컴파일 에러, 외부에서 생성 및 초
 > 구체 클래스를 알 수 없는 경우에도 객체를 복사할 수 있는 공통된 인터페이스를 제공합니다.
 
 
-```javascript
+```swift
 protocol Prototype {
     func operation(value: Int)
-   func clone() -> Prototype
+    func clone() -> Prototype
 }
 
 class ConcretePrototypeA : Prototype {
@@ -97,8 +97,7 @@ clientB.operation(value: 10)
 > Factory(팩토리) 디자인 패턴은 객체 생성과 관련된 디자인 패턴으로서 사용자에게 객체 생성 로직을 노출하지 않은채 객체를 생성하기 위해서 제공되는 패턴입니다.
 > 사용자는 단순히 필요한 객체의 생성 로직을 신경쓰지 않고 특정 객체에 대해서 가져올 수 있습니다.
 
-```javascript
-
+```swift
 class Factory {
     func makePen() -> Pen {
         return Pen()
@@ -143,7 +142,7 @@ pencil.make() // Make a pencil.
 > Factory Mthod(팩토리 매소드) 디자인 패턴은 객체 생성을 위해 인터페이스는 정의하지만 어떤 클래스의 인스턴스를 생성할 지에 결정은 서브클래스가 정의하도록 해주는 디자인 패턴입니다.
 > 팩토리 메서드는 직접 인스턴스를 생성하는 대신 생성을 위한 메서드를 인터페이스로 제공합니다. 서브 클래스는 생성될 객체의 클래스를 변경하기 위해서 메서드를 재정의 할 수 있습니다.
 
-```javascript
+```swift
 // Creator
 protocol Creator {
     func factoryMethod() -> Product
@@ -206,7 +205,7 @@ concreteClient(creator: ConcreteCreator2())
 > Abstract Factory(추상 팩토리) 디자인 패턴은 연관된 혹은 의존성이 있는 객체의 그룹을 구체적인 클래스를 지정하지 않고 생성하기 위해서 사용하는 패턴입니다.
 > 결국 객체 생성을 추상화하여 이를 사용하는 모듈과 독립적인 인터페이스를 정의할 수 있습니다.
 
-```javascript
+```swift
 protocol AbstractProduct {
     func useProduct()
 }
@@ -279,7 +278,7 @@ productB2.useProduct() // ProductB2 useProduct
 > Builder(빌더) 디자인 패턴은 복합 객체의 생성 과정과 표현 방법을 분리하여 동일한 생성 절차를 통하여 서로 다른 결과를 만들 수 있게 해주는 패턴입니다.
 > 즉 생성 절차는 항상 동일하되 결과는 다르게 만들어주는 디자인 패턴입니다. 또한 객체 내의 여러 속성들에 대해서 체이닝 형식으로 생성할 수도 있습니다.
 
-```javascript
+```swift
 class Product {
     var value1: Int = 0
     var value2: Int = 0
@@ -395,7 +394,7 @@ print("product3.value1 : \(product3.getProduct().value1)")
 > Adapter(어댑터) 디자인 패턴은 호환되지 않는 인터페이스를 가진 두 개의 객체가 함께 동작할 수 있도록 해주는 구조 설계 패턴입니다.
 > 즉 특정 객체의 인터페이스를 변환하여 다른 객체에 적응시켜 사용할 수 있게 도와줍니다.
 
-```javascript
+```swift
 class Target {
     func request() -> String {
         return ""
@@ -439,7 +438,7 @@ Client.specificRequest(target: Adapter(adaptee))
 > Facade(퍼사드) 디자인 패턴은 복잡한 클래스 시스템에 대해서 간단한 인터페이스를 제공해주는 구조 설계 관련 디자인 패턴입니다.
 > Facade 패턴은 많은 클래스를 포함하는 복잡한 서브 시스템을 사용하기 위한 간단한 인터페이스를 제공합니다. 
 
-```javascript
+```swift
 class Subsystem1 {
     func operation1() -> String {
         return "Sybsystem1: Ready!\n"
@@ -500,7 +499,7 @@ print(facade.operation())
 > Decorator(데코레이터) 디자인 패턴은 특정 객체에 대해서 새로운 기능을 동적(Run-time)으로 추가하기 위한 구조 설계 패턴입니다.
 > 객체에 동적으로 기능을 추가하고 코드의 추가를 숨기고 싶은 경우 사용하면 좋습니다.
 
-```javascript
+```swift
 protocol Component {
     func operation() -> String
 }
@@ -554,7 +553,7 @@ print("Result: " + decorator2.operation())
 > 즉, 전체-부분의 관계(Ex. Directory-File)를 갖는 객체들 사이의 관계를 정의할 때 유용합니다.
 > 또한 클라이언트는 전체와 부분을 구분하지 않고 동일한 인터페이스를 사용할 수 있습니다.
 
-```javascript
+```swift
 protocol Component {
     var parent: Component? { get set }
 
@@ -656,7 +655,7 @@ print("Tree(remove) : " + tree.operation())
 > 즉 기능과 구현에 대해서 두 개의 별도의 클래스로 구현을 할 수 있도록 하는 구조 설계 관련 패턴입니다.
 > Bridge 패턴은 객체의 다중 상속 구조를 피하면서 독립적으로 확장을 할 수 있도록 도와줍니다.
 
-```javascript
+```swift
 // Implementor
 protocol Car {
     // implementation()
@@ -719,7 +718,7 @@ redSedan.drive()
 > Flyweight 패턴은 객체의 내부에서 참조하는 객체를 직접 만드는 것이 아니라, 없다면 만들고 만들어져 있다면 객체를 공유하여 전달해주는 구조 관련 패턴입니다.
 > Flyweight 패턴을 사용하면 객체의 할당에 사용되는 메모리를 줄일 수 있을 뿐 아니라, 객체를 생성하는 시간도 들지 않게 도와줍니다.
 
-```javascript
+```swift
 class Flyweight {
     var sharedState: [String]
     init(sharedState: [String]) { self.sharedState = sharedState }
@@ -826,7 +825,7 @@ factory.printFlyweights()
 > Proxy(프록시)패턴은 실제 기능을 수행하는 객체(Real Object)(대신 가상의 객체(Proxy Object)를 사용해 로직의 흐름을 제어하는 디자인 패턴입니다.
 > 즉 Proxy 객체를 이용하여 원래 객체의 변경없이 기능을 특정 방식을 제어할 수 있게 도와줍니다.
 
-```javascript
+```swift
 protocol Subject {
     func request()
 }
@@ -872,7 +871,7 @@ clientProxy(subject: proxy)
 > Observer(옵저버) 패턴은 특정 객체에서 발생하는 이벤트를 구독자에게 전달하는 패턴입니다.
 > Observer(옵저버) 패턴은 한 객체의 상태 변화에 따라 다른 객체의 상태도 연동 되도록 1 대 N 객체간 의존 관계를 구성하는 디자인 패턴입니다.
 
-```javascript
+```swift
 // 구독할 주제 객체
 class Subject {
     var state: Int = { return Int(arc4random_uniform(10)) }()
@@ -947,7 +946,7 @@ subject.updateState()
 > Strategy 패턴은 클래스의 행위를 캡슐화 하여 동적으로 행위를 자유롭게 바꿀 수 있도록 돕는 패턴이다.
 > Strategy 패턴은 특정한 계열의 알고리즘(행위) 및 동작을 정의하고 해당 알고리즘을 캡슐화하며 이 알고리즘들을 해당 계열 안에서 상호 교체가 가능하게 만들어 줍니다.
 
-```javascript
+```swift
 class Context {
     private var strategy: Strategy
 
@@ -996,7 +995,7 @@ context.doSomeBusinessLogic() // e,d,c,b,a
 > 즉, 이벤트가 발생했을 때 실행될 기능이 다양하면서도 변경이 필요한 경우에 이벤트를 발생시키는 클래스를 변경하지 않고 재사용하고자 할 때 유용합니다.
 > 실행될 기능을 캡슐화함으로써 기능의 실행을 요구하는 호출자(Invoker) 클래스와 실제 기능을 실행하는 수신자(Receiver) 클래스 사이의 의존성을 제거합니다.
 
-```javascript
+```swift
 protocol Command {
     func execute()
 }
@@ -1080,7 +1079,7 @@ invoker.doSomethingImportant()
 > Iterator(반복자) 패턴은 데이터의 타입(리스트, 스택, 트리 등)을 드러내지 않고 컬렉션 요소를 순회할 수 있는 행동 디자인 패턴입니다.
 > Iterator(반복자) 패턴의 주요 아이디어는 컬렉션의 순회 동작을 별도의 반복자 객체로 분리하는 것입니다. 
 
-```javascript
+```swift
 protocol Collection
 {
     var items:[Any] { get set }
@@ -1193,7 +1192,7 @@ while (true) {
 > Mediator(미디에이터) 패턴은 복잡한 의존 관계를 줄이고자 할 때 유용한 행동 디자인 패턴입니다.
 > 모든 클래스간의 복잡한 로직(상호작용)을 캡슐화하여 하나의 클래스에 위임하여 처리하는 패턴으로서 비슷한 패턴으로는 Facade 패턴과 Observer 패턴 등이 있습니다.
 
-```javascript
+```swift
 protocol Mediator : AnyObject {
     func notify(sender: BaseComponent, event: String)
 }
@@ -1277,7 +1276,7 @@ component2.operationD()
 > State(상태) 패턴은 객체 내부의 상태에 따라서 객체가 다른 행동을 할 수 있게 해주는 패턴입니다.
 > 즉 객체의 상태만 변경해주어도 다른 행동을 하는 객체로 만들어줍니다.
 
-```javascript
+```swift
 class Context {
     private var state: State
 
@@ -1355,7 +1354,7 @@ context.request2() // ConcreteStateA handles request2.
 
 > Template Method 패턴은 어떤 작업을 처리하는 일부분을 서브 클래스로 캡슐화해 전체 일을 수행하는 구조는 바꾸지 않으면서 특정 단계에서 수행하는 내역을 바꾸는 행위 관련 패턴입니다.
 
-```javascript
+```swift
 protocol AbstractClass {
     func templateMethod() // 기본 템플릿 메소드
 
@@ -1454,7 +1453,7 @@ template2.templateMethod()
 > Visitor(방문자) 패턴의 예로서 파일 탐색기를 구현해볼수 있는데 파일 탐색기는 여기저기 폴더를 돌아다니면서 필요한 파일을 찾아서 특정 저장 공간에 그 파일들이 있는지 저장하였다가 방문이 모두 끝나면 사용자에게 결과를 보여줄 수 있습니다.
 > 바로 탐색기가 여기서 Visitor(방문자) 입니다.
 
-```javascript
+```swift
 protocol Element {
     func accept(_ visitor: Visitor)
 }
@@ -1531,7 +1530,7 @@ visit(elements: elements, visitor: visitor2)
 > Chain of Responsibility(책임 연쇄 패턴) 패턴은 연속적인 핸들러를 따라 요청을 전달하도록 하는 행동 디자인 패턴입니다.
 > 요청을 받으면 핸들러는 요청을 처리하거나 다음 핸들러로 요청을 전달합니다.
 
-```javascript
+```swift
 protocol Handler : class {
     @discardableResult // 결과를 사용하든 안하든 경고가 안 뜨도록 해주는 지시어
     func setNext(handler: Handler) -> Handler
@@ -1620,7 +1619,7 @@ handler(handler: dog)
 > Memento(메멘토) 패턴은 객체의 상태를 저장하고 복원할 수 있는 행동 디자인 패턴입니다. 
 > 기본 오리지날 객체는 본래의 기능에만 충실하고 상태 정보에 대한 관리를 메멘토 객체에게 전담하여 상태를 저장하고 복원할 수 있게 합니다.
 
-```javascript
+```swift
 class Originator {
     private var state: String
 
@@ -1752,7 +1751,7 @@ caretaker.undo()
 - View Controller : View가 Model을 표현하는 역할을 주로 하며 View Controller와 연결되어 대부분 View Controller가 
 모든 처리를 담당
 
-```javascript
+```swift
 import UIKit
 
 struct Person { // Model
@@ -1791,7 +1790,7 @@ view.person = model;
 - (Passive) View : Presenter를 소유하며 액션을 보내주는 객체
 - Presenter : Model을 소유하고 모델이 갱신되면 View 에 전달
 
-```javascript
+```swift
 import UIKit
 
 struct Person { // Model
@@ -1856,7 +1855,7 @@ view.presenter = presenter
 - View : View Controller가 View의 역할을 함
 - View Model : Model을 소유하고 모델을 직접 갱신한다. 갱신에 대한 이벤트 및 액션을 View에 바인딩하여 전달한다.
 
-```javascript
+```swift
 import UIKit
 
 struct Person { // Model
@@ -1923,7 +1922,7 @@ view.viewModel = viewModel
 - Entity : Model 객체
 - Router(Wireframe) : Persenter와 달리 View를 어떻게 보여줄지(seques)를 결정하는 객체
 
-```javascript
+```swift
 import UIKit
 
 struct Person { // Entity (usually more complex e.g. NSManagedObject)
