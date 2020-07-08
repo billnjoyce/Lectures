@@ -7,11 +7,11 @@ Swift와 함께 자료구조에 대한 개념 및 종류에 대해서 살펴봅�
 주요 강좌 및 개념
 -----------------------  
 
-* [Data Structure Introduction](https://github.com/billnjoyce/Lectures/blob/master/docs/data structure/[Swift] Data Structure Introduction.pdf)
+* [Data Structure Introduction](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20Introduction.pdf)
 
 > 자료구조의 주요 개요을 설명하고 자료구조의 목적과 분류에 대해서 살펴봅니다.
 
-* [Array](https://github.com/billnjoyce/Lectures/blob/master/docs/data structure/[Swift] Data Structure - Array.pdf)
+* [Array](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Array.pdf)
 
 > 자료구조에서 가장 기본이 되는 구조는 배열(리스트)입니다.
 
@@ -62,7 +62,7 @@ class ArrayList<T> {
 }
 ```
 
-* [Stack](https://github.com/billnjoyce/Lectures/blob/master/docs/data structure/[Swift] Data Structure - Stack.pdf)
+* [Stack](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Stack.pdf)
 
 > 스택은 리스트의 한쪽 끝에서 자료의 삽입과 삭제가 이루어지는 자료구조입니다.(LIFO)
 
@@ -114,7 +114,7 @@ extension Stack : Sequence {
 
 ```
 
-* [Queue](https://github.com/billnjoyce/Lectures/blob/master/docs/data structure/[Swift] Data Structure - Queue.pdf)
+* [Queue](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Queue.pdf)
 
 > 큐는 한쪽에서는 추가, 다른 한쪽에서는 삭제가 이루어지는 구조입니다.(FIFO)
 
@@ -179,7 +179,7 @@ extension Queue : Sequence {
 }
 ```
 
-* [Linked List](https://github.com/billnjoyce/Lectures/blob/master/docs/data structure/[Swift] Data Structure - Linked List.pdf)
+* [Linked List](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Linked%20List.pdf)
 
 > 링크드 리스트(Linked List)는 순차적으로 모인 데이터의 모음으로서 다음 차례의 노드 주소를 가지고 있는 형태를 가집니다.
 >
@@ -352,7 +352,7 @@ extension LinkedList : Sequence {
 }
 ```
 
-* [Dequeue](https://github.com/billnjoyce/Lectures/blob/master/docs/data structure/[Swift] Data Structure - Dequeue.pdf)
+* [Dequeue](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Dequeue.pdf)
 
 > 데크(Dequeue)는 Doubly-ended Queue의 약자로서 양쪽 끝에서 추가, 삭제가 가능한 선형 구조 형태의 자료구조입니다.
 
@@ -428,7 +428,7 @@ extension Dequeue : Sequence {
 }
 ```
 
-* [Tree](https://github.com/billnjoyce/Lectures/blob/master/docs/data structure/[Swift] Data Structure - Tree.pdf)
+* [Tree](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Tree.pdf)
 
 > 트리(Tree)는 일종의 계층적 자료구조(Hierarchical Data Structure)로서 부모 노드 하단에 자식 노드들을 연결하여 구성되는 형태의 자료구조입니다.
 
@@ -474,7 +474,7 @@ extension Tree : CustomStringConvertible {
 }
 ```
 
-* [Heap](https://github.com/billnjoyce/Lectures/blob/master/docs/data structure/[Swift] Data Structure - Heap.pdf)
+* [Heap](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Heap.pdf)
 
 > 힙(Heap)는 일종의 이진 트리(Tree)를 단일 배열을 이용하여 구현한 구조 가지는 자료구조로서 여러개의 값들 중에서 가장 큰 값이나 가장 작은 값을 빠르게 찾아내도록 하기위해서 만들어진 자료구조입니다.
 
@@ -595,7 +595,7 @@ extension Heap {
 }
 ```
 
-* [Graph](https://github.com/billnjoyce/Lectures/blob/master/docs/data structure/[Swift] Data Structure - Graph.pdf)
+* [Graph](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Graph.pdf)
 
 > 그래프(Graph)는 비선형(Non-Linear) 자료구조로서 노드(Node)와 간선(Edge)로 구성된 형태를 가진 네트워크 모델의 자료구조입니다.
 
@@ -718,7 +718,7 @@ open class AbstractGraph<T>: CustomStringConvertible where T: Hashable {
 }
 ```
 
-* [Graph(DFS)](https://github.com/billnjoyce/Lectures/blob/master/docs/data structure/[Swift] Data Structure - Graph(DFS).pdf)
+* [Graph(DFS)](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Graph(DFS).pdf)
 
 > DFS(Depth-First Search)란 깊이 우선 탐색으로서 그래프에서 모든 경로를 탐색하는데 사용하는 알고리즘입니다.
 
@@ -758,7 +758,7 @@ func depthFirstSearch(start: Int, end lastNode: Int, edges: [(Int, Int)]) -> [An
 }
 ```
 
-* [Graph(BFS)](https://github.com/billnjoyce/Lectures/blob/master/docs/data structure/[Swift] Data Structure - Graph(BFS).pdf)
+* [Graph(BFS)](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Graph(BFS).pdf)
 
 > BFS(Bredth-First Search)란 그래프(Graph)에서 노드를 탐색하기 위한 하나의 알고리즘 방법으로서 너비 우선 검색이라는 방식입니다.
 > BFS를 사용하여 최단 및 최소 경로를 구할 수 있습니다.
@@ -798,7 +798,7 @@ func breadthFirstSearch(n: Int, edges: [(Int, Int)]) -> [Any] {
 }
 ```
 
-* [Binary Tree](https://github.com/billnjoyce/Lectures/blob/master/docs/data structure/[Swift] Data Structure - Binary Tree.pdf)
+* [Binary Tree](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Binary%20Tree.pdf)
 
 > 이진 트리(Binary Tree)는 한 노드가 최대 2개의 자식 노드만 가질 수 있는 트리를 말합니다.
 
@@ -857,7 +857,7 @@ extension BinaryTree {
 }
 ```
 
-* [Binary Search Tree](https://github.com/billnjoyce/Lectures/blob/master/docs/data structure/[Swift] Data Structure - Binary Search Tree.pdf)
+* [Binary Search Tree](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Binary%20Search%20Tree.pdf)
 
 > 이진 탐색 트리(Binary Search Tree)는 이진 트리의 한 종류로서 삽입과 삭제에서 특정한 규칙을 두어 검색을 빠르게 할 수 있도록 도와주는 자료구조입니다.
 
@@ -1019,7 +1019,7 @@ extension BinarySearchTree: CustomStringConvertible {
 }
 ```
 
-* [AVL](https://github.com/billnjoyce/Lectures/blob/master/docs/data structure/[Swift] Data Structure - AVL.pdf)
+* [AVL](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20AVL.pdf)
 
 > AVL는 자가 균형 트리로서 트리가 한쪽으로 치우쳐 트리가 가지는 높이의 균형이 깨지지 않도록 스스로 균형을 맞춰주는 이진 탐색 트리입니다.
 
