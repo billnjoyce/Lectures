@@ -19,52 +19,28 @@
 * [[Swift] Data Structure - Heap](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Heap.pdf)
 * [[Swift] Data Structure - Tree](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Tree.pdf)
 * [[Swift] Data Structure - Graph](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Graph.pdf)
-* [[Swift] Data Structure - Graph(DFS)]
-(https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Graph(DFS).pdf)
+* [[Swift] Data Structure - Graph(DFS)](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Graph(DFS).pdf)
 * [[Swift] Data Structure - Graph(BFS)](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Graph(BFS).pdf)
 * [[Swift] Data Structure - Binary Tree](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Binary%20Tree.pdf)
-* [[Swift] Data Structure - Binary Search Tree
-(https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Binary%20Search%20Tree.pdf)
-* [[Swift] Data Structure - AVL]
-(https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20AVL.pdf)
+* [[Swift] Data Structure - Binary Search Tree](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20Binary%20Search%20Tree.pdf)
+* [[Swift] Data Structure - AVL](https://github.com/billnjoyce/Lectures/blob/master/docs/data%20structure/%5BSwift%5D%20Data%20Structure%20-%20AVL.pdf)
 
 
 [알고리즘](https://github.com/billnjoyce/Lectures/tree/master/docs/algorithm)
 ----------------------- 
 
-* [Recursive]
-(https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Recursive.pdf)
-
+* [Recursive](https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Recursive.pdf)
 * [Selection Sort](https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Selection%20Sort.pdf)
-
 * [Insertion Sort](https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Insertion%20Sort.pdf)
-
-* [Bubble Sort]
-(https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Bubble%20Sort.pdf)
-
-* [Merge Sort]
-(https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Merge%20Sort.pdf)
-
-* [Quick Sort]
-(https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Quick%20Sort.pdf)
-
-* [Heap Sort]
-(https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Heap%20Sort.pdf)
-
-* [Shell Sort]
-(https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Shell%20Sort.pdf)
-
-* [Binary Search]
-(https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Binary%20Search.pdf)
-
-* [Radix Sort]
-(https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Radix%20Sort.pdf)
-
-* [Counting Sort]
-(https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Counting%20Sort.pdf)
-
+* [Bubble Sort](https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Bubble%20Sort.pdf)
+* [Merge Sort](https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Merge%20Sort.pdf)
+* [Quick Sort](https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Quick%20Sort.pdf)
+* [Heap Sort](https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Heap%20Sort.pdf)
+* [Shell Sort](https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Shell%20Sort.pdf)
+* [Binary Search](https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Binary%20Search.pdf)
+* [Radix Sort](https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Radix%20Sort.pdf)
+* [Counting Sort](https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Counting%20Sort.pdf)
 * [Big O Notation](https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Big%20O%20Notation.pdf)
-
 * [Sorting Comparison](https://github.com/billnjoyce/Lectures/blob/master/docs/algorithm/%5BAlgorithm%5D%20Sorting%20Comparison.pdf)
 
 [디자인 패턴](https://github.com/billnjoyce/Lectures/tree/master/docs/design%20patterns)
