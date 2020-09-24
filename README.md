@@ -111,6 +111,7 @@
 
 - 닉네임 : Bill Kim
 - 이메일 : ibillkim@gmail.com
+- 개인 블로그 : https://joycestudios.tistory.com
 
 개발 히스토리
 ----------------------- 
